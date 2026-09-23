@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#020204" />
+    <title>Timeline</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main id="experience" aria-label="Visual timeline">
+      <canvas id="scene" aria-hidden="true"></canvas>
+      <div class="vignette" aria-hidden="true"></div>
+      <div class="interface">
+        <div class="topline"><span id="era"></span><span id="year"></span></div>
+        <div class="timeline-wrap">
+          <div class="timeline-info"><span id="instruction">Drag to travel</span><span id="counter"></span></div>
+          <input id="timeline" type="range" min="0" max="21" step="0.001" value="0" aria-label="Travel through the timeline" />
+          <div class="ends"><span>THE BEGINNING</span><span>NOW</span></div>
+        </div>
+      </div>
+    </main>
+    <script src="./app.js" defer></script>
+  </body>
+</html>
