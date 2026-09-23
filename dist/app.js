@@ -23,6 +23,21 @@ const chapters = [
   { title: "The modern world", time: "2026", image: "21-present.webp", color: "#b8d1db" }
 ];
 
+const beyondPresent = [
+  { title: "Pulsar beam through the Crab Nebula", image: "22-crab-nebula-pulsar.webp" },
+  { title: "A magnetar's beam across the void", image: "23-magnetar-beam.webp" },
+  { title: "Vela pulsar wind", image: "24-vela-pulsar.webp" },
+  { title: "Neutron-star accretion", image: "25-neutron-accretion.webp" },
+  { title: "A quantum measurement", image: "26-quantum-measurement.webp" },
+  { title: "A cell opens", image: "27-cell-membrane.webp" },
+  { title: "A planet crosses TRAPPIST-1", image: "28-trappist-transit.webp" },
+  { title: "Twilight on a tidally locked world", image: "29-tidally-locked-twilight.webp" },
+  { title: "A generation ship", image: "30-generation-ship.webp" },
+  { title: "Europa's hidden ocean", image: "31-europa-fracture.webp" },
+  { title: "A signal crosses a synapse", image: "32-synapse.webp" },
+  { title: "Titan's hydrocarbon lakes", image: "33-titan-lakes.webp" }
+];
+
 const canvas = document.querySelector("#scene");
 const slider = document.querySelector("#timeline");
 const era = document.querySelector("#era");
@@ -31,7 +46,12 @@ const instruction = document.querySelector("#instruction");
 const counter = document.querySelector("#counter");
 const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const max = chapters.length - 1;
+const assetMax = max + beyondPresent.length;
 slider.max = String(max);
+
+function visualAt(index) {
+  return index <= max ? chapters[index] : beyondPresent[index - max - 1];
+}
 
 let target = 0;
 let position = 0;
@@ -51,11 +71,11 @@ const images = new Map();
 const textures = new Map();
 
 function loadImage(index) {
-  if (index < 1 || index > max || images.has(index)) return;
+  if (index < 1 || index > assetMax || images.has(index)) return;
   const img = new Image();
   images.set(index, img);
   img.decoding = "async";
-  img.src = "./assets/" + chapters[index].image;
+  img.src = "./assets/" + visualAt(index).image;
   img.onload = () => {
     if (!gl) return;
     const texture = gl.createTexture();
@@ -189,8 +209,8 @@ function resize() {
 }
 
 function choosePair() {
-  const b = 1 + Math.floor(Math.random()*max);
-  const a = session?.b && session.b !== b ? session.b : 1 + Math.floor(Math.random()*max);
+  const b = 1 + Math.floor(Math.random()*assetMax);
+  const a = session?.b && session.b !== b ? session.b : 1 + Math.floor(Math.random()*assetMax);
   return {a, b, seed: Math.random()*100, changed: performance.now()};
 }
 
@@ -268,7 +288,7 @@ function updateLabels(now) {
   const selected=chapters[index];
   const active=position>.08;
   era.textContent=session ? (session.ended ? "After the present" : "Beyond the present") : active ? selected.title : "";
-  year.textContent=session ? (session.ended ? "30 minutes complete" : chapters[session.b].title) : active ? selected.time : "";
+  year.textContent=session ? (session.ended ? "30 minutes complete" : visualAt(session.b).title) : active ? selected.time : "";
   if (session) {
     const remaining=Math.max(0,Math.ceil((sessionLength-(now-session.start))/1000));
     const mins=String(Math.floor(remaining/60)).padStart(2,"0");
