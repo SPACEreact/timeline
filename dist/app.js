@@ -35,7 +35,19 @@ const beyondPresent = [
   { title: "A generation ship", image: "30-generation-ship.webp" },
   { title: "Europa's hidden ocean", image: "31-europa-fracture.webp" },
   { title: "A signal crosses a synapse", image: "32-synapse.webp" },
-  { title: "Titan's hydrocarbon lakes", image: "33-titan-lakes.webp" }
+  { title: "Titan's hydrocarbon lakes", image: "33-titan-lakes.webp" },
+  { title: "Cobalt fold under electric light", image: "34-cobalt-fold.webp" },
+  { title: "Red kite against the monsoon", image: "35-red-kite-monsoon.webp" },
+  { title: "First raindrop on a volcanic lake", image: "36-first-raindrop.webp" },
+  { title: "Comb jelly in the abyss", image: "37-comb-jelly.webp" },
+  { title: "Crescent moon behind the shadowed ring", image: "38-shadowed-ring-moon.webp" },
+  { title: "A seedling breaks through wet earth", image: "39-seedling.webp" },
+  { title: "Amber window on the last train", image: "40-amber-train.webp" },
+  { title: "Lone wind-bent tree above the clouds", image: "41-wind-bent-tree.webp" },
+  { title: "Black hole and tiny spacecraft", image: "42-black-hole-probe.webp" },
+  { title: "Cliffside sailboat at golden hour", image: "43-cliffside-sailboat.webp" },
+  { title: "Glowing mitochondrion", image: "44-mitochondrion.webp" },
+  { title: "Golden gateway to the Taj Mahal", image: "45-taj-gateway.webp" }
 ];
 
 const canvas = document.querySelector("#scene");
@@ -209,8 +221,9 @@ function resize() {
 }
 
 function choosePair() {
-  const b = 1 + Math.floor(Math.random()*assetMax);
-  const a = session?.b && session.b !== b ? session.b : 1 + Math.floor(Math.random()*assetMax);
+  const a = session?.b || 1 + Math.floor(Math.random()*assetMax);
+  const next = 1 + Math.floor(Math.random()*(assetMax-1));
+  const b = next >= a ? next + 1 : next;
   return {a, b, seed: Math.random()*100, changed: performance.now()};
 }
 
