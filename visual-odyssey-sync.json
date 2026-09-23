@@ -1,6 +1,41 @@
 {
   "schema_version": 1,
   "bootstrap_cutoff_utc": "2026-09-23T09:20:02.629Z",
-  "processed_library_ids": [],
-  "notes": "The first 21 historical chapters were already included in the initial repository import. Only consider visual-odyssey image files generated after bootstrap_cutoff_utc for the post-present pool."
+  "processed_library_ids": [
+    "libfile_4db940de84dc819194951198e08091dd",
+    "libfile_074adc93d5c481919c3c9ecb2e166b06",
+    "libfile_53e9513cd4a081918ff222baf1dd4160",
+    "libfile_54bf87b93aac8191829b78aab2ade1fd",
+    "libfile_e832618a4a3c8191adc325dbb52c722e",
+    "libfile_60a306fd4700819182fcf5c01c35287b",
+    "libfile_31a3ea307dcc8191bce6413cec8918f7",
+    "libfile_106ee9ec21a48191adb1776749536dc4",
+    "libfile_57caef096994819191316500d98a2d20",
+    "libfile_00edef1486b48191b94beae4cfeb4251",
+    "libfile_08d380ba58388191b662948661f3b41f",
+    "libfile_e270f00912b08191a486d2245ef959ac",
+    "libfile_3584ac6ebc308191b792d7bf31a6aed3",
+    "libfile_eac826d5ccf881918ea9a3a479da69f1",
+    "libfile_65850029178c81918118818af40c22b0",
+    "libfile_4fafadf4627c819192dc6a84c40303f8"
+  ],
+  "asset_by_library_id": {
+    "libfile_4db940de84dc819194951198e08091dd": "22-crab-nebula-pulsar.webp",
+    "libfile_074adc93d5c481919c3c9ecb2e166b06": "23-magnetar-beam.webp",
+    "libfile_53e9513cd4a081918ff222baf1dd4160": "24-vela-pulsar.webp",
+    "libfile_54bf87b93aac8191829b78aab2ade1fd": "25-neutron-accretion.webp",
+    "libfile_e832618a4a3c8191adc325dbb52c722e": "26-quantum-measurement.webp",
+    "libfile_60a306fd4700819182fcf5c01c35287b": "27-cell-membrane.webp",
+    "libfile_31a3ea307dcc8191bce6413cec8918f7": "28-trappist-transit.webp",
+    "libfile_106ee9ec21a48191adb1776749536dc4": "29-tidally-locked-twilight.webp",
+    "libfile_57caef096994819191316500d98a2d20": "30-generation-ship.webp",
+    "libfile_00edef1486b48191b94beae4cfeb4251": "31-europa-fracture.webp",
+    "libfile_08d380ba58388191b662948661f3b41f": "32-synapse.webp",
+    "libfile_e270f00912b08191a486d2245ef959ac": "33-titan-lakes.webp",
+    "libfile_3584ac6ebc308191b792d7bf31a6aed3": "47-tiny-tree-sunlight.webp",
+    "libfile_eac826d5ccf881918ea9a3a479da69f1": "48-protostellar-jet.webp",
+    "libfile_65850029178c81918118818af40c22b0": "49-shadow-distant-star.webp",
+    "libfile_4fafadf4627c819192dc6a84c40303f8": "50-mitochondrial-rupture.webp"
+  },
+  "notes": "The first 21 historical chapters predate this manifest. Check image content as well as Library IDs before adding visuals; some Library images are copies of existing assets."
 }

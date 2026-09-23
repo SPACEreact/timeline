@@ -47,7 +47,12 @@ const beyondPresent = [
   { title: "Black hole and tiny spacecraft", image: "42-black-hole-probe.webp" },
   { title: "Cliffside sailboat at golden hour", image: "43-cliffside-sailboat.webp" },
   { title: "Glowing mitochondrion", image: "44-mitochondrion.webp" },
-  { title: "Golden gateway to the Taj Mahal", image: "45-taj-gateway.webp" }
+  { title: "Golden gateway to the Taj Mahal", image: "45-taj-gateway.webp" },
+  { title: "Runaway star's bow shock", image: "46-runaway-star-bow-shock.webp" },
+  { title: "Tiny tree reaching sunlight", image: "47-tiny-tree-sunlight.webp" },
+  { title: "Protostellar jet through a dust pillar", image: "48-protostellar-jet.webp" },
+  { title: "Shadow toward a distant star", image: "49-shadow-distant-star.webp" },
+  { title: "Luminous mitochondrial rupture", image: "50-mitochondrial-rupture.webp" }
 ];
 
 const canvas = document.querySelector("#scene");
